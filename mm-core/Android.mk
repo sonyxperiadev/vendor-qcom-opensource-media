@@ -22,6 +22,14 @@ else ifeq ($(filter $(TARGET_BOARD_PLATFORM), atoll),$(TARGET_BOARD_PLATFORM))
 OMXCORE_CFLAGS += -D_ATOLL_
 else ifeq ($(filter $(TARGET_BOARD_PLATFORM), sdm845 msmskunk),$(TARGET_BOARD_PLATFORM))
 MM_CORE_TARGET = sdm845
+else ifeq ($(filter $(TARGET_BOARD_PLATFORM), sdm660),$(TARGET_BOARD_PLATFORM))
+MM_CORE_TARGET = sdm660
+else ifeq ($(filter $(TARGET_BOARD_PLATFORM), msm8998),$(TARGET_BOARD_PLATFORM))
+MM_CORE_TARGET = msm8998
+else ifeq ($(filter $(TARGET_BOARD_PLATFORM), msm8996),$(TARGET_BOARD_PLATFORM))
+MM_CORE_TARGET = msm8996
+else ifeq ($(filter $(TARGET_BOARD_PLATFORM), msm8952),$(TARGET_BOARD_PLATFORM))
+MM_CORE_TARGET = msm8952
 else
 OMXCORE_CFLAGS += -D_DEFAULT_
 endif
@@ -86,7 +94,7 @@ LOCAL_CFLAGS            := $(OMXCORE_CFLAGS)
 
 LOCAL_SRC_FILES         := src/common/omx_core_cmp.cpp
 LOCAL_SRC_FILES         += src/common/qc_omx_core.c
-ifneq (,$(filter sdm845 ,$(TARGET_BOARD_PLATFORM)))
+ifneq (,$(filter msm8952 msm8996 msm8998 sdm660 sdm845 ,$(TARGET_BOARD_PLATFORM)))
 LOCAL_SRC_FILES         += src/$(MM_CORE_TARGET)/registry_table_android.c
 else ifneq (,$(filter sm8150 $(MSMSTEPPE) $(TRINKET) atoll,$(TARGET_BOARD_PLATFORM)))
 LOCAL_SRC_FILES         += src/registry_table_android.c
@@ -121,7 +129,7 @@ LOCAL_CFLAGS            := $(OMXCORE_CFLAGS)
 
 LOCAL_SRC_FILES         := src/common/omx_core_cmp.cpp
 LOCAL_SRC_FILES         += src/common/qc_omx_core.c
-ifneq (,$(filter sdm845 ,$(TARGET_BOARD_PLATFORM)))
+ifneq (,$(filter msm8952 msm8996 msm8998 sdm660 sdm845 ,$(TARGET_BOARD_PLATFORM)))
 LOCAL_SRC_FILES         += src/$(MM_CORE_TARGET)/registry_table.c
 else ifneq (,$(filter sm8150 $(MSMSTEPPE) $(TRINKET) atoll,$(TARGET_BOARD_PLATFORM)))
 LOCAL_SRC_FILES         += src/$(MM_CORE_TARGET)/registry_table.c
