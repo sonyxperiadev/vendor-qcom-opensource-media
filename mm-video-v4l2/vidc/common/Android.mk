@@ -28,12 +28,15 @@ libmm-vidc-inc      := $(LOCAL_PATH)/inc
 libmm-vidc-inc      += $(TOP)/hardware/qcom/media/mm-core/inc
 libmm-vidc-inc      += $(TOP)/hardware/qcom/media/mm-video-v4l2/vidc/vdec/inc
 libmm-vidc-inc      += $(TOP)/hardware/qcom/media/libc2dcolorconvert
-libmm-vidc-inc      += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 libmm-vidc-inc      += $(TOP)/hardware/libhardware/include
 libmm-vidc-inc      += $(TOP)/frameworks/native/headers/media_plugin
 libmm-vidc-inc      += $(TARGET_OUT_HEADERS)/qcom/display
 libmm-vidc-inc      += $(LIBION_HEADER_PATHS)
 
+ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+libmm-vidc-inc      += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+endif
 
 
 LOCAL_MODULE                    := libOmxVidcCommon
@@ -61,7 +64,6 @@ LOCAL_SRC_FILES   += src/vidc_common.cpp
 LOCAL_SRC_FILES   += src/vidc_debug.cpp
 LOCAL_SRC_FILES   += src/vidc_vendor_extensions.cpp
 
-LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 include $(BUILD_STATIC_LIBRARY)
 
