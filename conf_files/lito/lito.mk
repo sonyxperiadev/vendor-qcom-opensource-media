@@ -1,4 +1,4 @@
-CONFIG_PATH := hardware/qcom/media/conf_files/lito
+CONFIG_PATH := $(QCOM_MEDIA_ROOT)/conf_files/lito
 #Bring all FEATURE FLAG (Compilation) here
 
 PRODUCT_COPY_FILES += \
