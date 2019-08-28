@@ -1,5 +1,5 @@
 
-CONFIG_PATH := hardware/qcom/media/conf_files/kona
+CONFIG_PATH := $(QCOM_MEDIA_ROOT)/conf_files/kona
 #Bring all FEATURE FLAG (Compilation) here
 
 PRODUCT_COPY_FILES += \
