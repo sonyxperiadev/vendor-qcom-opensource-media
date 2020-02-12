@@ -11,7 +11,7 @@ libarbitrarybytes-inc  += $(LOCAL_PATH)/../mm-core/inc
 
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-libarbitrarybytes-inc  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+libarbitrarybytes-inc  += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 endif
 
 LOCAL_MODULE           := libarbitrarybytes
