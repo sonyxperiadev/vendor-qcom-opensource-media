@@ -1,3 +1,5 @@
+ifneq ($(filter $(QCOM_NEW_MEDIA_PLATFORM), $(TARGET_BOARD_PLATFORM)),)
+
 QCOM_MEDIA_ROOT := $(call my-dir)
 
 VIDC_STUB_HAL := false
@@ -20,4 +22,5 @@ include $(QCOM_MEDIA_ROOT)/mm-video-v4l2/Android.mk
 include $(QCOM_MEDIA_ROOT)/libc2dcolorconvert/Android.mk
 include $(QCOM_MEDIA_ROOT)/media-prop/Android.mk
 endif #VIDC_STUB_HAL
+endif
 endif
