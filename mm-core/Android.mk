@@ -130,9 +130,9 @@ LOCAL_SRC_FILES         += src/common/qc_omx_core.c
 ifneq (,$(filter msm8952 msm8996 msm8998 sdm660 sdm845,$(TARGET_BOARD_PLATFORM)))
 LOCAL_SRC_FILES         += src/$(MM_CORE_TARGET)/registry_table.c
 else ifneq (,$(filter sm8150 sdmshrike $(MSMSTEPPE) $(TRINKET) atoll,$(TARGET_BOARD_PLATFORM)))
-LOCAL_SRC_FILES         += src/$(MM_CORE_TARGET)/registry_table.c
+LOCAL_SRC_FILES         += src/registry_table.c
 else
-LOCAL_SRC_FILES         += src/$(MM_CORE_TARGET)/qc_registry_table.c
+LOCAL_SRC_FILES         += src/qc_registry_table.c
 endif
 
 include $(BUILD_SHARED_LIBRARY)
