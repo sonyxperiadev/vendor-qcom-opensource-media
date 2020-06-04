@@ -147,9 +147,9 @@ endif
 LOCAL_SRC_FILES         := src/common/omx_core_cmp.cpp
 LOCAL_SRC_FILES         += src/common/qc_omx_core.c
 ifneq (,$(filter lito bengal kona $(MSMSTEPPE),$(TARGET_BOARD_PLATFORM)))
-LOCAL_SRC_FILES         += src/$(MM_CORE_TARGET)/registry_table.c
+LOCAL_SRC_FILES         += src/registry_table.c
 else
-LOCAL_SRC_FILES         += src/$(MM_CORE_TARGET)/default/qc_registry_table.c
+LOCAL_SRC_FILES         += src/default/qc_registry_table.c
 endif
 
 include $(BUILD_SHARED_LIBRARY)
