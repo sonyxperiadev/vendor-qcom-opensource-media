@@ -98,6 +98,7 @@ LOCAL_SRC_FILES         += src/$(MM_CORE_TARGET)/registry_table_android.c
 else ifneq (,$(filter sm8150 sdmshrike $(MSMSTEPPE) $(TRINKET) atoll,$(TARGET_BOARD_PLATFORM)))
 LOCAL_SRC_FILES         += src/registry_table_android.c
 else
+$(error "sm8150 media HAL: Refusing to include example file qc_registry_table.c, check if TARGET_BOARD_PLATFORM is correct and in the filter above")
 LOCAL_SRC_FILES         += src/qc_registry_table_android.c
 endif
 
