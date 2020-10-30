@@ -7271,7 +7271,8 @@ void venc_dev::venc_get_consumer_usage(OMX_U32* usage) {
         *usage |= GRALLOC_USAGE_PRIVATE_HEIF_VIDEO;
     }
 
-    if (!strncmp(m_platform_name, "trinket", 7)) {
+    if (!strncmp(m_platform_name, "trinket", 7) &&
+        !strncmp(m_platform_name, "sm6125", 7)) {
         if (m_sVenc_cfg.input_width < 640 || m_sVenc_cfg.input_height < 480) {
             *usage &= ~GRALLOC_USAGE_PRIVATE_ALLOC_UBWC;
         }
