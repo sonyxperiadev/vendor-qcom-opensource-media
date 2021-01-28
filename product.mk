@@ -1,4 +1,4 @@
-MSM_VIDC_TARGET_LIST := kona lito bengal
+MSM_VIDC_TARGET_LIST := kona $(KONA) lito bengal
 
 ifeq ($(call is-board-platform-in-list, $(QCOM_BOARD_PLATFORMS)),true)
 
@@ -23,7 +23,11 @@ MM_VIDEO += init.qti.media.sh
 
 PRODUCT_PACKAGES += $(MM_VIDEO)
 
+ifeq ($(TARGET_BOARD_PLATFORM), $(KONA))
+include $(QCOM_MEDIA_ROOT)/conf_files/kona/kona.mk
+else
 include $(QCOM_MEDIA_ROOT)/conf_files/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
+endif
 
 endif
 
