@@ -64,7 +64,6 @@ libmm-venc-inc      += $(TARGET_OUT_HEADERS)/adreno
 libmm-venc-inc      += $(QCOM_MEDIA_ROOT)/libc2dcolorconvert
 libmm-venc-inc      += $(TOP)/frameworks/native/libs/nativewindow/include
 libmm-venc-inc      += $(TOP)/frameworks/native/libs/nativebase/include
-libmm-venc-inc      += $(TOP)/vendor/qcom/proprietary/cv-noship/fastcv/inc/fastcv
 libmm-venc-inc      += $(TOP)/frameworks/native/libs/arect/include
 
 ifneq ($(call is-board-platform-in-list, $(TARGETS_THAT_DONT_SUPPORT_SW_VENC_ROTATION)),true)
@@ -114,7 +113,6 @@ LOCAL_SHARED_LIBRARIES    := liblog libcutils libdl libplatformconfig libion
 LOCAL_SHARED_LIBRARIES    += libc2dcolorconvert
 # endif # ($(BOARD_USES_ADRENO), true)
 LOCAL_SHARED_LIBRARIES += libqdMetaData
-LOCAL_SHARED_LIBRARIES += libfastcvopt
 LOCAL_STATIC_LIBRARIES    := libOmxVidcCommon
 
 LOCAL_SRC_FILES   := src/omx_video_base.cpp
@@ -161,7 +159,6 @@ LOCAL_PRELINK_MODULE      := false
 LOCAL_SHARED_LIBRARIES    := liblog libcutils libdl libplatformconfig libion
 LOCAL_SHARED_LIBRARIES    += libMpeg4SwEncoder
 LOCAL_SHARED_LIBRARIES    += libqdMetaData
-LOCAL_SHARED_LIBRARIES += libfastcvopt
 
 ifneq ($(call is-board-platform-in-list, $(TARGETS_THAT_DONT_SUPPORT_SW_VENC_ROTATION)),true)
 LOCAL_SHARED_LIBRARIES += libui
