@@ -37,7 +37,6 @@ LOCAL_SRC_FILES := PlatformConfig.cpp
 LOCAL_SRC_FILES += ConfigParser.cpp
 
 ####################
-ENABLE_CONFIGSTORE = true
 ifeq ($(ENABLE_CONFIGSTORE),true)
 LOCAL_SRC_FILES += ConfigStore.cpp
 LOCAL_CFLAGS += -DENABLE_CONFIGSTORE
