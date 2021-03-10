@@ -29,6 +29,8 @@ else ifeq ($(filter $(TARGET_BOARD_PLATFORM), $(MSMSTEPPE)),$(TARGET_BOARD_PLATF
 OMXCORE_CFLAGS += -D_STEPPE_
 else ifeq ($(filter $(TARGET_BOARD_PLATFORM), $(TRINKET)),$(TARGET_BOARD_PLATFORM))
 OMXCORE_CFLAGS += -D_TRINKET_
+else ifeq ($(filter $(TARGET_BOARD_PLATFORM), sdm845),$(TARGET_BOARD_PLATFORM))
+OMXCORE_CFLAGS += -D_SDM845_
 else
 OMXCORE_CFLAGS += -D_DEFAULT_
 endif
@@ -72,7 +74,7 @@ LOCAL_CFLAGS            := $(OMXCORE_CFLAGS)
 
 LOCAL_SRC_FILES         := src/common/omx_core_cmp.cpp
 LOCAL_SRC_FILES         += src/common/qc_omx_core.c
-ifneq (,$(filter lito bengal kona $(KONA) $(MSMNILE) $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+ifneq (,$(filter lito bengal kona $(KONA) $(MSMNILE) $(MSMSTEPPE) $(TRINKET) sdm845,$(TARGET_BOARD_PLATFORM)))
 LOCAL_SRC_FILES         += src/registry_table_android.c
 else
 LOCAL_SRC_FILES         += src/default/qc_registry_table_android.c
@@ -117,7 +119,7 @@ endif
 
 LOCAL_SRC_FILES         := src/common/omx_core_cmp.cpp
 LOCAL_SRC_FILES         += src/common/qc_omx_core.c
-ifneq (,$(filter lito bengal kona $(KONA) $(MSMNILE) $(MSMSTEPPE)  $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+ifneq (,$(filter lito bengal kona $(KONA) $(MSMNILE) $(MSMSTEPPE)  $(TRINKET) sdm845,$(TARGET_BOARD_PLATFORM)))
 LOCAL_SRC_FILES         += src/registry_table.c
 else
 LOCAL_SRC_FILES         += src/default/qc_registry_table.c
