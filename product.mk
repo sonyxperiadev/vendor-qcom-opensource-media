@@ -1,5 +1,3 @@
-MSM_VIDC_TARGET_LIST := kona $(KONA) $(LITO) bengal
-
 ifeq ($(call is-board-platform-in-list, $(QCOM_BOARD_PLATFORMS)),true)
 
 #MM_CORE
@@ -9,8 +7,6 @@ MM_CORE += libOmxCore
 PRODUCT_PACKAGES += $(MM_CORE)
 
 endif
-
-ifeq ($(call is-board-platform-in-list, $(MSM_VIDC_TARGET_LIST)), true)
 
 MM_VIDEO := ExoplayerDemo
 MM_VIDEO += libc2dcolorconvert
@@ -29,8 +25,6 @@ else ifeq ($(TARGET_BOARD_PLATFORM, $(LITO))
 include $(QCOM_MEDIA_ROOT)/conf_files/lito/lito.mk
 else
 include $(QCOM_MEDIA_ROOT)/conf_files/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
-endif
-
 endif
 
 #Vendor property to enable Codec2 for audio and OMX for Video

@@ -65,10 +65,8 @@ LOCAL_MODULE            := libOmxCore
 LOCAL_MODULE_TAGS       := optional
 LOCAL_VENDOR_MODULE     := true
 LOCAL_SHARED_LIBRARIES  := liblog libdl libcutils
-ifeq ($(call is-board-platform-in-list, $(MSM_VIDC_TARGET_LIST)),true)
 ifeq ($(VIDC_STUB_HAL),false)
 LOCAL_SHARED_LIBRARIES  += libplatformconfig
-endif
 endif
 LOCAL_CFLAGS            := $(OMXCORE_CFLAGS)
 
@@ -102,10 +100,8 @@ LOCAL_MODULE            := libmm-omxcore
 LOCAL_MODULE_TAGS       := optional
 LOCAL_VENDOR_MODULE     := true
 LOCAL_SHARED_LIBRARIES  := liblog libdl libcutils
-ifeq ($(call is-board-platform-in-list, $(MSM_VIDC_TARGET_LIST)),true)
 ifeq ($(VIDC_STUB_HAL),false)
 LOCAL_SHARED_LIBRARIES  += libplatformconfig
-endif
 endif
 LOCAL_CFLAGS            := $(OMXCORE_CFLAGS)
 
